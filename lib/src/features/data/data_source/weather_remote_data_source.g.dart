@@ -14,7 +14,7 @@ class _WeatherRemoteDataSource implements WeatherRemoteDataSource {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'http://api.weatherapi.com/v1';
+    baseUrl ??= 'http://api.weatherapi.com';
   }
 
   final Dio _dio;
@@ -42,7 +42,7 @@ class _WeatherRemoteDataSource implements WeatherRemoteDataSource {
     )
         .compose(
           _dio.options,
-          '/v1',
+          '/v1/current.json',
           queryParameters: queryParameters,
           data: _data,
         )

@@ -8,7 +8,7 @@ part 'weather_remote_data_source.g.dart';
 abstract class WeatherRemoteDataSource {
   factory WeatherRemoteDataSource(Dio dio) = _WeatherRemoteDataSource;
   
-  @GET("/v1")
+  @GET("/v1/current.json")
   Future<HttpResponse<dynamic>> getWeatherData({
     @Query("key") required String key,
     @Query("q") required String query,
